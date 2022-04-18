@@ -31,17 +31,17 @@
               <% end %>
               <%= link_to about_path do %>
                 <li class="p-2 text-light">
-                  <span><i class="fas fa-link"></i> About</span>
+                  <span><i class="fas fa-users"></i> Users</span>
                 </li>
               <% end %>
               <%= link_to new_user_registration_path do %>
                 <li class="p-2 text-light">
-                  <span><i class="fas fa-user-plus"></i> Sign up</span>
+                  <span><i class="fas fa-user"></i> Books</span>
                 </li>
               <% end %>
-              <%= link_to new_user_session_path do %>
+              <%= link_to destroy_user_session_path,method: :delete do %>
                 <li class="p-2 text-light">
-                  <span><i class="fas fa-sign-in-alt"></i> Log in</span>
+                  <span><i class="fas fa-book-open"></i> Log out</span>
                 </li>
               <% end %>
             <% else %>
