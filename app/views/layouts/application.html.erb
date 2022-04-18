@@ -5,12 +5,71 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/4ac72d4f08.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <div class=container>
+          <a href="/" class="navbar-brand">
+            Bookers
+          </a>
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"
+          aria-label="Toggle navigation" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+            <% if user_signed_in?  %>
+              <%= link_to root_path do %>
+                <li class="p-2 text-light">
+                  <span><i class="fas fa-home"></i> Home</span>
+                </li>
+              <% end %>
+              <%= link_to about_path do %>
+                <li class="p-2 text-light">
+                  <span><i class="fas fa-link"></i> About</span>
+                </li>
+              <% end %>
+              <%= link_to new_user_registration_path do %>
+                <li class="p-2 text-light">
+                  <span><i class="fas fa-user-plus"></i> Sign up</span>
+                </li>
+              <% end %>
+              <%= link_to new_user_session_path do %>
+                <li class="p-2 text-light">
+                  <span><i class="fas fa-sign-in-alt"></i> Log in</span>
+                </li>
+              <% end %>
+            <% else %>
+              <%= link_to root_path do %>
+                <li class="p-2 text-light">
+                  <span><i class="fas fa-home"></i> Home</span>
+                </li>
+              <% end %>
+              <%= link_to about_path do %>
+                <li class="p-2 text-light">
+                  <span><i class="fas fa-link"></i> About</span>
+                </li>
+              <% end %>
+              <%= link_to new_user_registration_path do %>
+                <li class="p-2 text-light">
+                  <span><i class="fas fa-user-plus"></i> Sign up</span>
+                  </li>
+              <% end %>
+              <%= link_to new_user_session_path do %>
+                <li class="p-2 text-light">
+                  <span><i class="fas fa-sign-in-alt"></i> Log in</span>
+                </li>
+              <% end %>
+            <% end %>
+            </ul>
+          </div>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
