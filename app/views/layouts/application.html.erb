@@ -24,12 +24,12 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in?  %>
-              <%= link_to root_path do %>
+              <%= link_to user_path(current_user.id) do %>
                 <li class="p-2 text-light">
                   <span><i class="fas fa-home"></i> Home</span>
                 </li>
               <% end %>
-              <%= link_to about_path do %>
+              <%= link_to users_path do %>
                 <li class="p-2 text-light">
                   <span><i class="fas fa-users"></i> Users</span>
                 </li>

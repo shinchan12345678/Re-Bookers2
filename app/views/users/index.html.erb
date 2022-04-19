@@ -1,2 +1,35 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-lg-3">
+      <%= render partial: 'users/user.html.erb', locals: {user: current_user} %>
+    </div>
+    <div class="col-lg-8 offset-lg-1">
+      <h2>Users</h2>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>image</th>
+            <th>name</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td>
+              <%= image_tag user.get_profile_image(100,100) %>
+            </td>
+            <td class="align-middle">
+                <%= user.name %>
+            </td>
+            <td class="align-middle">
+              <%= link_to "Show" ,user_path(user.id) %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <hr class="mt-0">
+    </div>
+  </div>
+</div>
