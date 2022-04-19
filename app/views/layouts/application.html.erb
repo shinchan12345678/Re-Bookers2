@@ -36,12 +36,12 @@
               <% end %>
               <%= link_to books_path do %>
                 <li class="p-2 text-light">
-                  <span><i class="fas fa-user"></i> Books</span>
+                  <span><i class="fas fa-book-open"></i> Books</span>
                 </li>
               <% end %>
               <%= link_to destroy_user_session_path,method: :delete do %>
                 <li class="p-2 text-light">
-                  <span><i class="fas fa-book-open"></i> Log out</span>
+                  <span><i class="fas fa-sign-out-alt"></i> Log out</span>
                 </li>
               <% end %>
             <% else %>
@@ -58,7 +58,7 @@
               <%= link_to new_user_registration_path do %>
                 <li class="p-2 text-light">
                   <span><i class="fas fa-user-plus"></i> Sign up</span>
-                  </li>
+                </li>
               <% end %>
               <%= link_to new_user_session_path do %>
                 <li class="p-2 text-light">
@@ -70,13 +70,13 @@
           </div>
       </nav>
     </header>
-  
+
     <div>
       <% flash.each do |key,value| %>
         <p><%= value %></p>
       <% end %>
     </div>
-         
+
     <%= yield %>
     <footer>
       <div class="container mt-5">
