@@ -70,6 +70,13 @@
           </div>
       </nav>
     </header>
+  
+    <div>
+      <% flash.each do |key,value| %>
+        <p><%= value %></p>
+      <% end %>
+    </div>
+    
     <%= yield %>
     <footer>
       <div class="container mt-5">
